@@ -1,7 +1,7 @@
 # 🚀 High-Availability Scalable Web Application on AWS
 
 ## 📑 Table of Contents
-- [📌 Project Overview](#-project-overview)
+- [Project Overview](#-project-overview)
 - [🏗 Architecture Diagram](#-architecture-diagram)
 - [🚀 Key Features](#-key-features)
 - [🛠 Tech Stack](#-tech-stack)
@@ -11,7 +11,7 @@
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 the **Ink Cloud** solution helps users create, store, and manage digital notes through a web-based application designed to replace traditional paper notebooks. It enables users to securely access their notes from anywhere while maintaining simplicity and ease of use.
 
@@ -95,20 +95,50 @@ Allow HTTP traffic only from the Application Load Balancer (ALB-SG)
  ---
 5. Deploy an **Amazon RDS Mysql** instance in private subnets.
 ## Creat Database
-<img width="1490" height="271" alt="Screenshot (435)" src="https://github.com/user-attachments/assets/f1b7819e-4736-439e-a301-898420c1cd0f" />
 
+<img width="1490" height="271" alt="Screenshot (435)" src="https://github.com/user-attachments/assets/f1b7819e-4736-439e-a301-898420c1cd0f" />
 <img width="1119" height="588" alt="Screenshot (438)" src="https://github.com/user-attachments/assets/93cb4a1d-8819-49b9-97a7-9666d6a7ebc5" />
-     Note: 
      
+  //NOTE//Based on the architecture diagram, the Availability Zones should be two. However, due to the limitations of the AWS Free Tier, it is not possible to distribute the databases across two Availability Zones.
+
+  
+ ## Subnet group
+ <img width="1508" height="686" alt="Screenshot (425)" src="https://github.com/user-attachments/assets/b6d21f78-cb18-47e9-95cf-497d51c63b04" />
+ 
+<img width="1503" height="306" alt="Screenshot (424)" src="https://github.com/user-attachments/assets/0cdb837e-7ce1-4d22-b62e-4f2349018bdc" />
+
 ## Security group rules
 
 <img width="1507" height="283" alt="Screenshot (437)" src="https://github.com/user-attachments/assets/e8582884-c480-41ba-ae84-b95af20128a6" />
 
    ---
 7. Create a **Launch Template** containing the application setup.
+<img width="1905" height="724" alt="Screenshot (442)" src="https://github.com/user-attachments/assets/a0b33272-03bf-4c4b-8d22-3a4e5d509671" />
 
+## User Data 
+    
   ---
 9. Configure an **Auto Scaling Group** and attach it to an **Application Load Balancer**.
+## ALB 
+
+<img width="1516" height="475" alt="Screenshot (407)" src="https://github.com/user-attachments/assets/9af9477c-6d99-468e-ac07-bd5e239fc1c6" />
+
+
+## ASG
+ We notice in the image below, highlighted in green, that the storage capacity is set as follows: **Desired = 2**, **Minimum = 1**, and **Maximum = 3**.
+This represents the number of instances we want to add when distributing the load across the servers. It depends on the size of the project, and these numbers can be increased based on the capacity required by the project.
+Here, I added **2**, which is suitable for my project.
+
+<img width="1558" height="718" alt="Screenshot (443)" src="https://github.com/user-attachments/assets/ab441747-ac6e-4463-935c-5c513612f336" />
+
+## Target Groub
+
+  
+
+<img width="1599" height="682" alt="Screenshot (444)" src="https://github.com/user-attachments/assets/28b74530-1c90-452e-a689-ed13555a01ae" />
+
+<img width="1572" height="363" alt="Screenshot (445)" src="https://github.com/user-attachments/assets/cf7131e7-849a-41af-9df9-1020db91426f" />
+
   ---
 11. Set up **CloudWatch Alarms** to alerts.
     

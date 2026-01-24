@@ -1,19 +1,19 @@
-# 🚀 High-Availability Scalable Web Application on AWS
+  # High-Availability Scalable Web Application on AWS
 
-## 📑 Table of Contents
+## Table of Contents
 - [Project Overview](#-project-overview)
-- [🏗 Architecture Diagram](#-architecture-diagram)
-- [🚀 Key Features](#-key-features)
-- [🛠 Tech Stack](#-tech-stack)
-- [🛤 Request Flow (Technical Path)](#-request-flow-technical-path)
-- [🔧 How to Deploy (Quick Steps)](#-how-to-deploy-quick-steps)
-- [📧 Contact](#-contact)
+- [Architecture Diagram](#-architecture-diagram)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Request Flow (Technical Path)](#-request-flow-technical-path)
+- [How to Deploy (Quick Steps)](#-how-to-deploy-quick-steps)
+- [Contact](#-contact)
 
 ---
 
 ##  Project Overview
 
-the **Ink Cloud** solution helps users create, store, and manage digital notes through a web-based application designed to replace traditional paper notebooks. It enables users to securely access their notes from anywhere while maintaining simplicity and ease of use.
+The **Ink Cloud** solution helps users create, store, and manage digital notes through a web-based application designed to replace traditional paper notebooks. It enables users to securely access their notes from anywhere while maintaining simplicity and ease of use.
 
 A key idea behind Ink Cloud is high availability — your notes are always available and never lost. To achieve this, the solution uses a **scalable AWS architecture** built on **Amazon EC2**, **Auto Scaling Groups**, and an **Application Load Balancer**, ensuring continuous access to user data even during infrastructure failures.
 
@@ -21,7 +21,7 @@ This solution automatically operates in a highly available, fault-tolerant envir
 
 ---
 
-## 🏗 Architecture Diagram
+## Architecture Diagram
 
 <img width="6525" height="4950" alt="مشروعي" src="https://github.com/user-attachments/assets/9cd604f3-547d-4027-8278-35bc07c44566" />
 
@@ -30,7 +30,7 @@ This solution automatically operates in a highly available, fault-tolerant envir
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 - **Scalability**: Automatically scales EC2 instances based on traffic demand using Auto Scaling policies.
 - **High Availability**: Deployed across multiple Availability Zones to ensure application resilience.
@@ -43,18 +43,18 @@ This solution automatically operates in a highly available, fault-tolerant envir
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Cloud Provider**: AWS (Amazon Web Services)
 - **Compute**: EC2, Auto Scaling Group, Launch Templates
-- **Networking**: VPC, Public & Private Subnets, ALB, NAT Gateway, Internet Gateway
+- **Networking**: VPC, Public & Private Subnets, ALB, Internet Gateway
 - **Database**: Amazon RDS (MySQL / PostgreSQL)
 - **Security**: IAM Roles, Security Groups
 - **Monitoring & Management**: CloudWatch, SNS
 
 ---
 
-## 🛤 Request Flow (Technical Path)
+## Request Flow (Technical Path)
 
 1. **User** sends a request through the **Internet Gateway**.
 2. The **Application Load Balancer (ALB)** receives traffic and performs health checks.
@@ -64,18 +64,19 @@ This solution automatically operates in a highly available, fault-tolerant envir
 
 ---
 
-## 🔧 How to Deploy (Quick Steps)
+## How to Deploy (Quick Steps)
 
 1. Create a **VPC** with public and private subnets across at least two Availability Zones.
+ ---
 <img width="1640" height="732" alt="Screenshot (427)" src="https://github.com/user-attachments/assets/bb3aa711-da59-4e07-aa9d-0c612da77c90" />
-** **
+
 <img width="1825" height="570" alt="Screenshot (429)" src="https://github.com/user-attachments/assets/ce414814-3f28-4eae-bfc6-5642674ff041" />
 
-3. Configure an **Internet Gateway**
+2. Configure an **Internet Gateway**
   <img width="1613" height="400" alt="Screenshot (426)" src="https://github.com/user-attachments/assets/c0796f83-a102-4e8a-81ac-ed8a9ec93dd8" />
 
 ---
-Create **Security Groups** for RDS , WebSerever, ALP
+3. Create **Security Groups** for RDS , WebSerever, ALb
 
 ## ALB-SG
 Allow public HTTP traffic from the internet to the Load Balancer.
@@ -92,17 +93,23 @@ Allow HTTP traffic only from the Application Load Balancer (ALB-SG)
 
 <img width="1583" height="607" alt="Screenshot (433)" src="https://github.com/user-attachments/assets/3125a3e4-55a6-452e-bae3-176cec91a624" />
 
+##  IAM Roles
+<img width="1484" height="380" alt="Screenshot (446)" src="https://github.com/user-attachments/assets/a9d72a0f-58ed-4d2a-a105-1725c0333839" />
+<img width="911" height="387" alt="Screenshot (447)" src="https://github.com/user-attachments/assets/7a1b8776-69d2-48ae-8ab2-71d0c4b840fc" />
+
+
  ---
-5. Deploy an **Amazon RDS Mysql** instance in private subnets.
+4. Deploy an **Amazon RDS Mysql** instance in private subnets.
 ## Creat Database
 
 <img width="1490" height="271" alt="Screenshot (435)" src="https://github.com/user-attachments/assets/f1b7819e-4736-439e-a301-898420c1cd0f" />
 <img width="1119" height="588" alt="Screenshot (438)" src="https://github.com/user-attachments/assets/93cb4a1d-8819-49b9-97a7-9666d6a7ebc5" />
      
-  //NOTE//Based on the architecture diagram, the Availability Zones should be two. However, due to the limitations of the AWS Free Tier, it is not possible to distribute the databases across two Availability Zones.
+  /* NOTE:Based on the architecture diagram, the Availability Zones should be two. However, due to the limitations of the AWS Free Tier, it is not possible to distribute the databases across two Availability Zones.*/
 
   
  ## Subnet group
+   Why?
  <img width="1508" height="686" alt="Screenshot (425)" src="https://github.com/user-attachments/assets/b6d21f78-cb18-47e9-95cf-497d51c63b04" />
  
 <img width="1503" height="306" alt="Screenshot (424)" src="https://github.com/user-attachments/assets/0cdb837e-7ce1-4d22-b62e-4f2349018bdc" />
@@ -112,13 +119,29 @@ Allow HTTP traffic only from the Application Load Balancer (ALB-SG)
 <img width="1507" height="283" alt="Screenshot (437)" src="https://github.com/user-attachments/assets/e8582884-c480-41ba-ae84-b95af20128a6" />
 
    ---
-7. Create a **Launch Template** containing the application setup.
+5. Create a **Launch Template** containing the application setup.
 <img width="1905" height="724" alt="Screenshot (442)" src="https://github.com/user-attachments/assets/a0b33272-03bf-4c4b-8d22-3a4e5d509671" />
 
 ## User Data 
-    
+Here, I am only showing the most important parts of the code related to connecting the HTML page to the servers, not the entire code.
+
+ **1. Setting up the software environment**
+        
+        #!/bin/bash yum update -y
+        yum install -y httpd php php-mysqli
+  **2. Starting the server**    
+
+           systemctl start httpd
+           systemctl enable httpd
+  **3. Database Configuration**
+          
+           http_response_code(200); 
+           $host = "my-web-db.ccl8iy6uimed.us-east-1.rds.amazonaws.com";
+             $user = " user name";
+             $pass = " ";
+              $db   = "mydb"; // database intitil name
   ---
-9. Configure an **Auto Scaling Group** and attach it to an **Application Load Balancer**.
+6. Configure an **Auto Scaling Group** and attach it to an **Application Load Balancer**.
 ## ALB 
 
 <img width="1516" height="475" alt="Screenshot (407)" src="https://github.com/user-attachments/assets/9af9477c-6d99-468e-ac07-bd5e239fc1c6" />
@@ -131,16 +154,15 @@ Here, I added **2**, which is suitable for my project.
 
 <img width="1558" height="718" alt="Screenshot (443)" src="https://github.com/user-attachments/assets/ab441747-ac6e-4463-935c-5c513612f336" />
 
-## Target Groub
+## Target Group
+ 
+  <img width="1599" height="682" alt="Screenshot (444)" src="https://github.com/user-attachments/assets/bd7727d5-df31-4a54-8de4-68ab1731e03e" />
 
-  
-
-<img width="1599" height="682" alt="Screenshot (444)" src="https://github.com/user-attachments/assets/28b74530-1c90-452e-a689-ed13555a01ae" />
-
-<img width="1572" height="363" alt="Screenshot (445)" src="https://github.com/user-attachments/assets/cf7131e7-849a-41af-9df9-1020db91426f" />
+<img width="1572" height="363" alt="Screenshot (445)" src="https://github.com/user-attachments/assets/91b2974d-0603-4448-9c25-01f3a349c816" />
+ 
 
   ---
-11. Set up **CloudWatch Alarms** to alerts.
+7. Set up **CloudWatch Alarms** to alerts.
     
 <img width="1913" height="500" alt="Screenshot (398)" src="https://github.com/user-attachments/assets/d8096183-6dd6-4740-858e-3b7b1aa1c042" />
 
@@ -149,15 +171,18 @@ Here, I added **2**, which is suitable for my project.
 
 <img width="1515" height="634" alt="Screenshot (401)" src="https://github.com/user-attachments/assets/7a09ff77-d200-4c0a-9ddb-7af03393e0d5" />
 
+<img width="1515" height="634" alt="Screenshot (401)" src="https://github.com/user-attachments/assets/e61a34f2-30a8-42b8-bd51-e920a853d0f4" />
 
-<img width="1920" height="1080" alt="Screenshot (402)" src="https://github.com/user-attachments/assets/26330c7d-b25e-4dc0-9811-75f5b83f0a32" />
-
-<img width="1538" height="648" alt="Screenshot (416)" src="https://github.com/user-attachments/assets/17b645a4-57dc-4523-9acb-a4d5c51666d0" />
+<img width="1538" height="648" alt="Screenshot (416)" src="https://github.com/user-attachments/assets/4abb8c1b-85f8-4992-82d1-f5b52984489a" />
 
 
 ---
 
-## 📧 Contact
 
-**Your Name**  
+## Final Rsulte 
+   
+  
+
+
+**Nada**  
 🔗 https://www.linkedin.com

@@ -23,7 +23,8 @@ This solution automatically operates in a highly available, fault-tolerant envir
 
 ## Architecture Diagram
 
-<img width="6525" height="4950" alt="مشروعي" src="https://github.com/user-attachments/assets/9cd604f3-547d-4027-8278-35bc07c44566" />
+
+<img width="6525" height="4950" alt="مشروعي (1)" src="https://github.com/user-attachments/assets/f268ca66-d34b-444a-804e-409c27319f48" />
 
 
 *Note: The architecture follows AWS best practices by separating public and private resources, ensuring security, scalability, and reliability.*
@@ -195,9 +196,9 @@ Here, I added **2**, which is suitable for my project.
 ___
 
 ## Final Resulte 
-   A simple website through which you can write your ideas, save them, and also delete them. I added a database connectivity feature so that when the site is accessible, I can verify whether the connection is successful. If a green color appears, it means the connection is established and the data is saved in a database table; otherwise, an error will be displayed. I added this note for technical details related to system testing and ensuring that the data is directed to the correct destination. When I refresh the page, the data remains, and if there is heavy load on an instance, the server will route traffic to the second Availability Zone to identify another instance.
+A simple website through which you can write your ideas, save them, and also delete them. I added a database connectivity feature so that when the site is accessible, I can verify whether the connection is successful. If a green color appears, it means the connection is established and the data is saved in a database table; otherwise, an error will be displayed. I added this note for technical details related to system testing and ensuring that the data is directed to the correct destination. When I refresh the page, the data remains, and if there is heavy load on an instance, the server will route traffic to the second Availability Zone to identify another instance.
 
-     URL: 
+     URL: MyProject-ALB-384035755.us-east-1.elb.amazonaws.com
 
 https://github.com/user-attachments/assets/ae38c000-137f-46a0-9a97-b87f3f42995d
 

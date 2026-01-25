@@ -209,4 +209,6 @@ I welcome any feedback or observations, as they will contribute significantly to
 
 
 **Nada**  
-🔗 https://www.linkedin.com
+ [https://www.linkedin.com](https://www.linkedin.com/in/nada-mesfer?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2BrqkfnfNS6KHXv9%2FC2kMjg%3D%3D)
+
+Email: [nd9arch@gmail.com](mailto:nd9arch@gmail.com)

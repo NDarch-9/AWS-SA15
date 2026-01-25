@@ -7,6 +7,8 @@
 - [Tech Stack](#-tech-stack)
 - [Request Flow (Technical Path)](#-request-flow-technical-path)
 - [How to Deploy (Quick Steps)](#-how-to-deploy-quick-steps)
+- [Final Resulte](-Final-Resulte)
+-  [Conclusion](-Conclusion)
 - [Contact](#-contact)
 
 ---

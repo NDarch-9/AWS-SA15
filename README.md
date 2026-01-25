@@ -56,11 +56,18 @@ This solution automatically operates in a highly available, fault-tolerant envir
 
 ## Request Flow (Technical Path)
 
-1. **User** sends a request through the **Internet Gateway**.
-2. The **Application Load Balancer (ALB)** receives traffic and performs health checks.
-3. The **Target Group** forwards the request to a healthy **EC2 instance** in a private subnet.
-4. The **EC2 instance** processes the request and communicates with the **primary RDS** instance.
-5. **CloudWatch** monitors the Auto Scaling Group and triggers scaling actions when thresholds are exceeded.
+1. User sends an HTTP request via the Internet.
+2. The request enters the VPC through the Internet Gateway.
+3. The Application Load Balancer (ALB) receives the request and performs health checks.
+4. The ALB forwards the request to a healthy EC2 instance in a private subnet via the Target Group.
+5. The EC2 instance processes the request and reads/writes data to the Amazon RDS database.
+6. The response is returned back to the user through the ALB.
+
+
+## Monitoring & Scaling
+- Amazon CloudWatch monitors EC2 metrics and ALB request counts.
+- CloudWatch alarms trigger Auto Scaling policies when thresholds are exceeded.
+- The Auto Scaling Group launches or terminates EC2 instances accordingly.
 
 ---
 
@@ -194,7 +201,10 @@ ___
 
 https://github.com/user-attachments/assets/ae38c000-137f-46a0-9a97-b87f3f42995d
 
+## Conclusion
 
+This project represents my first hands-on experience with cloud computing and the practical implementation of scalable cloud architecture on AWS. While there may be areas for improvement and potential mistakes, the overall process has been a valuable learning journey that strengthened my understanding of cloud services, scalability, and system design. Through continuous practice, experimentation, and guidance, I am confident that I will further enhance my technical skills over time.
+I welcome any feedback or observations, as they will contribute significantly to my professional growth and the improvement of future projects.
 
 
 **Nada**  

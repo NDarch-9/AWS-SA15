@@ -109,7 +109,14 @@ Allow HTTP traffic only from the Application Load Balancer (ALB-SG)
 
   
  ## Subnet group
-   Why?
+**Why DB Subnet Groups Matter?**
+A DB Subnet Group defines the network boundaries for RDS instances. 
+
+High Availability (Multi-AZ) : It maps subnets across multiple Availability Zones, ensuring the infrastructure is "failover-ready" even if one data center goes down.
+
+Strict Security Isolation : It confines the database to Private Subnets, removing any direct route to the public internet and drastically reducing the attack surface.
+
+Scalable Networking : It pre-organizes internal IP addressing, allowing for seamless scaling, updates, and maintenance without reconfiguring the VPC architecture.
  <img width="1508" height="686" alt="Screenshot (425)" src="https://github.com/user-attachments/assets/b6d21f78-cb18-47e9-95cf-497d51c63b04" />
  
 <img width="1503" height="306" alt="Screenshot (424)" src="https://github.com/user-attachments/assets/0cdb837e-7ce1-4d22-b62e-4f2349018bdc" />

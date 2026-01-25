@@ -48,7 +48,7 @@ This solution automatically operates in a highly available, fault-tolerant envir
 - **Cloud Provider**: AWS (Amazon Web Services)
 - **Compute**: EC2, Auto Scaling Group, Launch Templates
 - **Networking**: VPC, Public & Private Subnets, ALB, Internet Gateway
-- **Database**: Amazon RDS (MySQL / PostgreSQL)
+- **Database**: Amazon RDS (MySQL (
 - **Security**: IAM Roles, Security Groups
 - **Monitoring & Management**: CloudWatch, SNS
 
@@ -105,7 +105,7 @@ Allow HTTP traffic only from the Application Load Balancer (ALB-SG)
 <img width="1490" height="271" alt="Screenshot (435)" src="https://github.com/user-attachments/assets/f1b7819e-4736-439e-a301-898420c1cd0f" />
 <img width="1119" height="588" alt="Screenshot (438)" src="https://github.com/user-attachments/assets/93cb4a1d-8819-49b9-97a7-9666d6a7ebc5" />
      
-  /* NOTE:Based on the architecture diagram, the Availability Zones should be two. However, due to the limitations of the AWS Free Tier, it is not possible to distribute the databases across two Availability Zones.*/
+NOTE:Based on the architecture diagram, the Availability Zones should be two. However, due to the limitations of the AWS Free Tier, it is not possible to distribute the databases across two Availability Zones.
 
   
  ## Subnet group
@@ -182,13 +182,19 @@ Here, I added **2**, which is suitable for my project.
 
 <img width="1538" height="648" alt="Screenshot (416)" src="https://github.com/user-attachments/assets/4abb8c1b-85f8-4992-82d1-f5b52984489a" />
 
+<img width="1500" height="473" alt="Screenshot (449)" src="https://github.com/user-attachments/assets/50e8f782-cc74-4ce4-be35-6f62de9afa1e" />
 
 ---
+___
+
+## Final Resulte 
+   A simple website through which you can write your ideas, save them, and also delete them. I added a database connectivity feature so that when the site is accessible, I can verify whether the connection is successful. If a green color appears, it means the connection is established and the data is saved in a database table; otherwise, an error will be displayed. I added this note for technical details related to system testing and ensuring that the data is directed to the correct destination. When I refresh the page, the data remains, and if there is heavy load on an instance, the server will route traffic to the second Availability Zone to identify another instance.
+
+     URL: 
+
+https://github.com/user-attachments/assets/ae38c000-137f-46a0-9a97-b87f3f42995d
 
 
-## Final Rsulte 
-   
-  
 
 
 **Nada**  

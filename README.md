@@ -176,7 +176,15 @@ Here, I added **2**, which is suitable for my project.
   <img width="1599" height="682" alt="Screenshot (444)" src="https://github.com/user-attachments/assets/bd7727d5-df31-4a54-8de4-68ab1731e03e" />
 
 <img width="1572" height="363" alt="Screenshot (445)" src="https://github.com/user-attachments/assets/91b2974d-0603-4448-9c25-01f3a349c816" />
- 
+
+ ## Instances 
+
+   Here, after the load balancer, auto scaling, and target group have completed their tasks, the new instances will appear in this way.
+   If one of the instances is stopped, a new instance will be automatically launched within less than two minutes and will enter the provisioning state.
+
+  
+ <img width="1576" height="328" alt="Screenshot (421)" src="https://github.com/user-attachments/assets/41faa17c-bbf0-43ef-811c-51f2ca767e5e" />
+
 
   ---
 7. Set up **CloudWatch Alarms** to alerts.

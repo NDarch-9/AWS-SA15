@@ -26,7 +26,8 @@ This solution automatically operates in a highly available, fault-tolerant envir
 ## Architecture Diagram
 
 
-<img width="6525" height="4950" alt="مشروعي (1)" src="https://github.com/user-attachments/assets/f268ca66-d34b-444a-804e-409c27319f48" />
+<img width="6525" height="4950" alt="مشروعي (2)" src="https://github.com/user-attachments/assets/f2a804f5-579f-48a3-9a07-843e5cfc855e" />
+
 
 
 *Note: The architecture follows AWS best practices by separating public and private resources, ensuring security, scalability, and reliability.*
@@ -51,7 +52,7 @@ This solution automatically operates in a highly available, fault-tolerant envir
 - **Cloud Provider**: AWS (Amazon Web Services)
 - **Compute**: EC2, Auto Scaling Group, Launch Templates
 - **Networking**: VPC, Public & Private Subnets, ALB, Internet Gateway
-- **Database**: Amazon RDS (MySQL (
+- **Database**: Amazon RDS (MySQL)
 - **Security**: IAM Roles, Security Groups
 - **Monitoring & Management**: CloudWatch, SNS
 

@@ -179,12 +179,18 @@ Here, I added **2**, which is suitable for my project.
 <img width="1572" height="363" alt="Screenshot (445)" src="https://github.com/user-attachments/assets/91b2974d-0603-4448-9c25-01f3a349c816" />
 
  ## Instances 
+Here, after the load balancer, Auto Scaling Group, and target group have completed their processes,
+the new EC2 instances will appear through three stages: **pending, initializing (provisioning), and running**. 
+If one of the instances is stopped, a replacement instance will be automatically launched within less than two minutes, progressing through these stages before becoming fully operational and ready to serve traffic.
 
-   Here, after the load balancer, auto scaling, and target group have completed their tasks, the new instances will appear in this way.
-   If one of the instances is stopped, a new instance will be automatically launched within less than two minutes and will enter the provisioning state.
 
   
  <img width="1576" height="328" alt="Screenshot (421)" src="https://github.com/user-attachments/assets/41faa17c-bbf0-43ef-811c-51f2ca767e5e" />
+
+  
+
+https://github.com/user-attachments/assets/f50b56a3-fb31-4459-bcb1-19994af48afe
+
 
 
   ---
@@ -197,7 +203,6 @@ Here, I added **2**, which is suitable for my project.
 
 <img width="1515" height="634" alt="Screenshot (401)" src="https://github.com/user-attachments/assets/7a09ff77-d200-4c0a-9ddb-7af03393e0d5" />
 
-<img width="1515" height="634" alt="Screenshot (401)" src="https://github.com/user-attachments/assets/e61a34f2-30a8-42b8-bd51-e920a853d0f4" />
 
 <img width="1538" height="648" alt="Screenshot (416)" src="https://github.com/user-attachments/assets/4abb8c1b-85f8-4992-82d1-f5b52984489a" />
 

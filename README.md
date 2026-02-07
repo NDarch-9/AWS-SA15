@@ -214,7 +214,6 @@ ___
 ## Final Resulte 
 A simple website through which you can write your ideas, save them, and also delete them. I added a database connectivity feature so that when the site is accessible, I can verify whether the connection is successful. If a green color appears, it means the connection is established and the data is saved in a database table; otherwise, an error will be displayed. I added this note for technical details related to system testing and ensuring that the data is directed to the correct destination. When I refresh the page, the data remains, and if there is heavy load on an instance, the server will route traffic to the second Availability Zone to identify another instance.
 
-     URL: MyProject-ALB-384035755.us-east-1.elb.amazonaws.com
 
 https://github.com/user-attachments/assets/ae38c000-137f-46a0-9a97-b87f3f42995d
 
